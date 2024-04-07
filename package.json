@@ -1,0 +1,11 @@
+{
+  "name": "bmi_web",
+  "version": "1.0.0",
+  "description": "bmi calculator",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
