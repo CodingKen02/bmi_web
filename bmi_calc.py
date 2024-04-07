@@ -31,7 +31,6 @@ def main():
     bmi_value = calculate_bmi(height_feet, height_inches, weight_pounds)
     print(f"Your BMI value: {bmi_value:.2f}")
 
-    
     bmi_value = float(input("Enter your BMI value: "))
     bmi_cat = bmi_category(bmi_value)
     print(f"BMI Category: {bmi_cat}")
