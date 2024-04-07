@@ -1,5 +1,5 @@
 import pytest
-from bmi_calculator import calculate_bmi, bmi_category
+from bmi_calc import calculate_bmi, bmi_category
 
 def test_calculate_bmi_normal_weight():
     # Test case: Height 5'7", Weight 150 lbs (Normal weight)
