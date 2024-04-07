@@ -19,10 +19,11 @@ jobs:
       - run:
           name: Install Node.js and npm
           command: |
+            curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
             sudo apt-get update
             sudo apt-get install -y nodejs npm
       - run:
-          name: Install JavaScript dependencies
+          name: Install Jest
           command: npm install --save-dev jest
       - run:
           name: Run Jest tests
