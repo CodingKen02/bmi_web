@@ -12,3 +12,8 @@ jobs:
       - run:
           name: Run tests
           command: pytest
+      - run:
+          name: Static Analysis with Flake8
+          command: |
+            pip install flake8
+            flake8
