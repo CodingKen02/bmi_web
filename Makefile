@@ -1,2 +1,3 @@
 test-coverage:
-    npm run test -- --coverage
+	@echo "Running tests with coverage"
+	npm run test -- --coverage
