@@ -1,12 +1,19 @@
-version: 2.1
-jobs:
-  build:
+version: '2.1'
+orbs:
+  coveralls: coveralls/coveralls@1.0.6
+  jobs:
+    build:
+      docker:
+        - image: cimg/node:20.12.1
+          steps:
+            - checkout
+        - run:
+            command: npm install && make test-coverage
+            name: Install and Make
+        - coveralls/upload
+workflows: null
     docker:
       - image: cimg/python:3.12
-    # - image: cimg/node:20.12.1
-      # environment:
-      # CI: true
-    # - image: cypress/base:14
     steps:
       - checkout
       - run:
@@ -28,9 +35,13 @@ jobs:
       - run:
           name: Install Jest
           command: npm install --save-dev jest
-    #  - run:
-    #     name: Run Cypress tests
-    #     command: npm run cy:run
-    #  - run:
-    #     name: Run Jest tests
-    #     command: npm test
+    docker:
+      - image: cimg/node:20.12.1
+      - run:
+          name: Run Cypress tests
+          command: npm run cy:run
+      - run:
+          name: Run Jest tests
+          command: npm test
+    docker:
+      - image: cypress/base:14
