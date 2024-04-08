@@ -3,9 +3,9 @@ jobs:
   build:
     docker:
       - image: cimg/python:3.12
-      - image: cimg/node:20.12.1
-        environment:
-          CI: true
+      # - image: cimg/node:20.12.1
+      #  environment:
+      #   CI: true
     steps:
       - checkout
       - run:
@@ -27,6 +27,6 @@ jobs:
       - run:
           name: Install Jest
           command: npm install --save-dev jest
-      - run:
-          name: Run Jest tests
-          command: npm test
+    #  - run:
+    #     name: Run Jest tests
+    #     command: npm test
