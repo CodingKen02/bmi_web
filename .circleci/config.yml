@@ -23,7 +23,7 @@ jobs:
             sudo apt-get install -y nodejs
       - run:
           name: Install Jest
-          command: npm install --save-dev jest
+          command: npm install --save-dev -g jest
       - run:
           name: Run Jest tests
           command: npm test
